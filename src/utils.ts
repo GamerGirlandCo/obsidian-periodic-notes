@@ -78,10 +78,15 @@ export function applyTemplateTransformations(
 
   if (granularity === "week") {
     templateContents = templateContents.replace(
-      /{{\s*(sunday|monday|tuesday|wednesday|thursday|friday|saturday)\s*:(.*?)}}/gi,
-      (_, dayOfWeek, momentFormat) => {
+      /{{\s*(sunday|monday|tuesday|wednesday|thursday|friday|saturday)\s*(([+-]\d+)([yqmwdhs]))?\s*:(.*?)}}/gi,
+      (_, dayOfWeek, calc, timeDelta, unit, momentFormat) => {
         const day = getDayOfWeekNumericalValue(dayOfWeek);
-        return date.weekday(day).format(momentFormat.trim());
+        const weekStart = date.weekday(day)
+          .clone()
+        if(calc) {
+          weekStart.add(parseInt(timeDelta, 10), unit)
+        }
+        return weekStart.format(momentFormat.trim());
       }
     );
   }
