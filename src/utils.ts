@@ -87,7 +87,7 @@ export function applyTemplateTransformations(
             hour: now.get("hour"),
             minute: now.get("minute"),
             second: now.get("second"),
-          })
+          });
         if(calc) {
           weekStart.add(parseInt(timeDelta, 10), unit)
         }
