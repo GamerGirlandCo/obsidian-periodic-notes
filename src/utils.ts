@@ -80,9 +80,14 @@ export function applyTemplateTransformations(
     templateContents = templateContents.replace(
       /{{\s*(sunday|monday|tuesday|wednesday|thursday|friday|saturday)\s*(([+-]\d+)([yqmwdhs]))?\s*:(.*?)}}/gi,
       (_, dayOfWeek, calc, timeDelta, unit, momentFormat) => {
+        const now = window.moment();
         const day = getDayOfWeekNumericalValue(dayOfWeek);
         const weekStart = date.weekday(day)
-          .clone()
+          .clone().set({
+            hour: now.get("hour"),
+            minute: now.get("minute"),
+            second: now.get("second"),
+          })
         if(calc) {
           weekStart.add(parseInt(timeDelta, 10), unit)
         }
