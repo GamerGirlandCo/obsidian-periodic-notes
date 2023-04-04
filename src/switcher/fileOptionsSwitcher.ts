@@ -20,7 +20,7 @@ export class FileOptionsSwitcher extends SuggestModal<FileOptionsItem> {
 
   granularityLabel: HTMLElement;
   dailyNotes: Record<string, TFile>;
-  scope: Scope;
+  declare scope: Scope;
 
   constructor(app: App) {
     super(app);

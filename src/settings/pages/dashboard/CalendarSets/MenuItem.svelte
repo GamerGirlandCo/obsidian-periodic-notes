@@ -1,4 +1,4 @@
-<script type="ts">
+<script lang="ts" type="ts">
   import { App, Menu, setIcon } from "obsidian";
   import { onMount } from "svelte";
   import type { Writable } from "svelte/store";
@@ -109,7 +109,7 @@
   </div>
 </div>
 
-<style type="scss">
+<style lang="scss" type="scss">
   .calendarset-container {
     background: var(--background-primary-alt);
     border-radius: 16px;

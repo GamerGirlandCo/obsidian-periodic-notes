@@ -11,8 +11,8 @@ import {
   join,
 } from "src/utils";
 
-import type { Granularity } from "../types";
 import { RelatedFilesSwitcher } from "./relatedFilesSwitcher";
+import type { Granularity } from "../types";
 
 export interface DateNavigationItem {
   granularity: Granularity;

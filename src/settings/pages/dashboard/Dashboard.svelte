@@ -104,7 +104,8 @@
     options={getWeekStartOptions()}
     value={$localization.weekStart}
     onChange={(e) => {
-      const val = (e.target as HTMLInputElement)?.value;
+    // @ts-ignore
+      const val = (e.target)?.value;
       $localization.weekStart = val;
       app.vault.setConfig("weekStart", val);
     }}
@@ -122,7 +123,8 @@
     options={getLocaleOptions()}
     value={$localization.localeOverride}
     onChange={(e) => {
-      const val = (e.target as HTMLInputElement)?.value;
+      // @ts-ignore
+      const val = (e.target)?.value;
       $localization.localeOverride = val;
       app.vault.setConfig("weekStart", val);
     }}

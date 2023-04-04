@@ -25,7 +25,7 @@ import {
   DEFAULT_PERIODIC_CONFIG,
 } from "./settings";
 import {
-  configureGlobalMomentLocale,
+  // configureGlobalMomentLocale,
   initializeLocaleConfigOnce,
 } from "./settings/localization";
 import {

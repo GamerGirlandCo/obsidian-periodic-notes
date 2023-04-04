@@ -1,4 +1,4 @@
-<script type="ts">
+<script lang="ts">
   import type { App } from "obsidian";
   import {
     disableDailyNotesPlugin,
